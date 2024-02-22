@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="93c630c2-3074-4d17-b332-a568ce083b06" name="Django default (DDL) Mapping">
+      <data-sources ddl="c724c3f9-849e-40ef-b4a3-ee4f288dfb2f" />
+      <scope>
+        <node kind="database" negative="1" />
+      </scope>
+    </mapping>
+  </component>
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="c724c3f9-849e-40ef-b4a3-ee4f288dfb2f" />
+          <option name="name" value="Django default (DDL)" />
+          <option name="dbmsName" value="SQLITE" />
+          <option name="urls">
+            <array />
+          </option>
+          <option name="outLayout" value="File per object by schema.groovy" />
+        </State>
+      </list>
+    </option>
+  </component>
+</project>
