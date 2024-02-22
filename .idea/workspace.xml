@@ -5,11 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b35d161-4a75-4580-9da0-7f0fd0048593" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/media/blog/default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Django.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/53cea244-4d17-4824-8de4-b18a5b75d252.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/53cea244-4d17-4824-8de4-b18a5b75d252/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqlDataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qodana.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/blog/blog-home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/blog-home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/blog/blog-single.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/blog-single.html" afterDir="false" />
     </list>
@@ -59,7 +69,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.qodana",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -131,7 +141,7 @@
       <workItem from="1707628294605" duration="2071000" />
       <workItem from="1707665023368" duration="1342000" />
       <workItem from="1707962864596" duration="2617000" />
-      <workItem from="1707965822322" duration="31288000" />
+      <workItem from="1707965822322" duration="41861000" />
     </task>
     <servers />
   </component>

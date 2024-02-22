@@ -33,12 +33,18 @@
                         </div>
                         <div class="col-lg-3  col-md-3 meta-details">
                             <ul class="tags">
-                                {{ post.category.all | join:", " }}
+                                {% for category in post.category.all %}
+                                    {% if not forloop.last %}
+                                        <li><a href="#">{{ category.name }},</a></li>
+                                    {% else %}
+                                        <li><a href="#">{{ category.name }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
                             </ul>
                             <div class="user-details row">
                                 <p class="user-name col-lg-12 col-md-12 col-6">{{ post.author.get_full_name }} <span
                                         class="lnr lnr-user"></span></p>
-                                <p class="date col-lg-12 col-md-12 col-6">{{ post.published_date }} <span
+                                <p class="date col-lg-12 col-md-12 col-6">{{ post.published_date|date:"d M Y" }} <span
                                         class="lnr lnr-calendar-full"></span></p>
                                 <p class="view col-lg-12 col-md-12 col-6">{{ post.counted_views }} Views <span
                                         class="lnr lnr-eye"></span></p>
@@ -63,28 +69,34 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                                 <div class="thumb">
-                                    <a href="#"><img class="img-fluid" src="{% static 'img/blog/prev.jpg' %}"
-                                                     alt=""></a>
+                                    <a href="#"><img class="img-fluid"
+                                                     src="{{ post.get_previous_by_created_date.image.url }}" alt=""></a>
                                 </div>
                                 <div class="arrow">
                                     <a href="#"><span class="lnr text-white lnr-arrow-left"></span></a>
                                 </div>
                                 <div class="details">
-                                    <p>Prev Post</p>
-                                    <a href="#"><h4>Space The Final Frontier</h4></a>
+                                    {% if post.get_previous_by_created_date %}
+                                        <p>Prev Post</p>
+                                        <a href="{% url 'blog:single' post.get_previous_by_created_date.id %}">
+                                            <h4>{{ post.get_previous_by_created_date.title }}</h4></a>
+                                    {% endif %}
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
                                 <div class="details">
-                                    <p>Next Post</p>
-                                    <a href="#"><h4>Telescopes 101</h4></a>
+                                    {% if post.get_next_by_created_date %}
+                                        <p>Next Post</p>
+                                        <a href="{% url 'blog:single' post.get_next_by_created_date.id %}">
+                                            <h4>{{ post.get_next_by_created_date.title }}</h4></a>
+                                    {% endif %}
                                 </div>
                                 <div class="arrow">
                                     <a href="#"><span class="lnr text-white lnr-arrow-right"></span></a>
                                 </div>
                                 <div class="thumb">
-                                    <a href="#"><img class="img-fluid" src="{% static 'img/blog/next.jpg' %}"
-                                                     alt=""></a>
+                                    <a href="#"><img class="img-fluid"
+                                                     src="{{ post.get_next_by_created_date.image.url }}" alt=""></a>
                                 </div>
                             </div>
                         </div>
