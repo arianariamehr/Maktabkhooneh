@@ -92,7 +92,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 posts-list">
-
                     {% for post in posts %}
                         <div class="single-post row">
                             <div class="col-lg-3  col-md-3 meta-details">
@@ -131,7 +130,6 @@
                             </div>
                         </div>
                     {% endfor %}
-
                     <nav class="blog-pagination justify-content-center d-flex">
                         <ul class="pagination">
                             <li class="page-item">
@@ -148,9 +146,9 @@
                             <li class="page-item"><a href="#" class="page-link">09</a></li>
                             <li class="page-item">
                                 <a href="#" class="page-link" aria-label="Next">
-		                                    <span aria-hidden="true">
-		                                        <span class="lnr lnr-chevron-right"></span>
-		                                    </span>
+                                    <span aria-hidden="true">
+                                        <span class="lnr lnr-chevron-right"></span>
+                                    </span>
                                 </a>
                             </li>
                         </ul>
@@ -166,24 +164,9 @@
                                 <button type="submit"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
-                        <div class="single-sidebar-widget user-info-widget">
-                            <img src="{% static 'img/blog/user-info.png' %}" alt="">
-                            <a href="#"><h4>Charlie Barber</h4></a>
-                            <p>
-                                Senior blog writer
-                            </p>
-                            <ul class="social-links">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-github"></i></a></li>
-                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                            </ul>
-                            <p>
-                                Boot camps have its supporters bandit detractors. Some people do not understand why you
-                                should have to spend money on boot camp when you can get. Boot camps have support terms
-                                bandits detractors.
-                            </p>
-                        </div>
+
+                        {% include 'blog/blog-writer.html' %}
+
                         <div class="single-sidebar-widget popular-post-widget">
                             <h4 class="popular-title">Popular Posts</h4>
                             <div class="popular-post-list">
