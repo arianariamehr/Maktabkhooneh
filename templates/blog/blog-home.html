@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load blog_tags %}
 {% block content %}
 
     <!-- start banner Area -->
@@ -98,9 +99,13 @@
                                 <ul class="tags">
                                     {% for category in post.category.all %}
                                         {% if not forloop.last %}
-                                            <li><a href="#">{{ category.name }},</a></li>
+                                            <li>
+                                                <a href="{% url 'blog:category' category_name=category.name %}">{{ category.name }},</a>
+                                            </li>
                                         {% else %}
-                                            <li><a href="#">{{ category.name }}</a></li>
+                                            <li>
+                                                <a href="{% url 'blog:category' category_name=category.name %}">{{ category.name }}</a>
+                                            </li>
                                         {% endif %}
                                     {% endfor %}
                                 </ul>
@@ -158,11 +163,11 @@
                     <div class="widget-wrap">
                         {% include 'blog/blog-search.html' %}
                         {% include 'blog/blog-writer.html' %}
-                        {% include 'blog/blog-popular-posts.html' %}
-                        {% include 'blog/blog-ads.html' %}
-                        {% include 'blog/blog-post-categories.html' %}
-                        {% include 'blog/blog-newsletter.html' %}
+                        {% blog_popular_posts %}
+                        {% blog_post_categories %}
                         {% include 'blog/blog-tags.html' %}
+                        {% include 'blog/blog-ads.html' %}
+                        {% include 'blog/blog-newsletter.html' %}
                     </div>
                 </div>
             </div>

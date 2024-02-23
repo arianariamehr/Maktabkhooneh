@@ -16,3 +16,10 @@ def blog_single(request, pid):
     post.save()
     content = {'post': post}
     return render(request, 'blog/blog-single.html', content)
+
+
+def blog_category(request, category_name):
+    posts = Post.objects.filter(status=1)
+    posts = posts.filter(category__name=category_name)
+    context = {'posts': posts}
+    return render(request, 'blog/blog-home.html', context)
