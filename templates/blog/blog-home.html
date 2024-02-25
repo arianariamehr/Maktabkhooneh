@@ -138,25 +138,37 @@
                     {% endfor %}
                     <nav class="blog-pagination justify-content-center d-flex">
                         <ul class="pagination">
-                            <li class="page-item">
-                                <a href="#" class="page-link" aria-label="Previous">
-		                                    <span aria-hidden="true">
-		                                        <span class="lnr lnr-chevron-left"></span>
-		                                    </span>
-                                </a>
-                            </li>
-                            <li class="page-item"><a href="#" class="page-link">01</a></li>
-                            <li class="page-item active"><a href="#" class="page-link">02</a></li>
-                            <li class="page-item"><a href="#" class="page-link">03</a></li>
-                            <li class="page-item"><a href="#" class="page-link">04</a></li>
-                            <li class="page-item"><a href="#" class="page-link">09</a></li>
-                            <li class="page-item">
-                                <a href="#" class="page-link" aria-label="Next">
-                                    <span aria-hidden="true">
-                                        <span class="lnr lnr-chevron-right"></span>
-                                    </span>
-                                </a>
-                            </li>
+
+                            {% if posts.has_previous %}
+                                <li class="page-item">
+                                    <a href="?page={{ posts.previous_page_number }}" class="page-link"
+                                       aria-label="Previous">
+                                        <span aria-hidden="true">
+                                            <span class="lnr lnr-chevron-left"></span>
+                                        </span>
+                                    </a>
+                                </li>
+                            {% endif %}
+
+                            {% for page_number in posts.paginator.page_range %}
+                                {% if posts.number == page_number %}
+                                    <li class="page-item active"><a href="?page={{ page_number }}"
+                                                                    class="page-link">{{ page_number }}</a></li>
+                                {% else %}
+                                    <li class="page-item"><a href="?page={{ page_number }}"
+                                                             class="page-link">{{ page_number }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+
+                            {% if posts.has_next %}
+                                <li class="page-item">
+                                    <a href="?page={{ posts.next_page_number }}" class="page-link" aria-label="Next">
+                                        <span aria-hidden="true">
+                                            <span class="lnr lnr-chevron-right"></span>
+                                        </span>
+                                    </a>
+                                </li>
+                            {% endif %}
                         </ul>
                     </nav>
                 </div>
@@ -166,7 +178,7 @@
                         {% include 'blog/blog-writer.html' %}
                         {% blog_popular_posts %}
                         {% blog_post_categories %}
-                        {% include 'blog/blog-tags.html' %}
+                        {% blog_post_tags %}
                         {% include 'blog/blog-ads.html' %}
                         {% include 'blog/blog-newsletter.html' %}
                     </div>

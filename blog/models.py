@@ -1,5 +1,16 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.html import format_html
+
+
+class Tag(models.Model):
+    name = models.CharField(max_length=50)
+
+    class Meta:
+        verbose_name_plural = 'Tags'
+
+    def __str__(self):
+        return self.name
 
 
 class Category(models.Model):
@@ -14,6 +25,7 @@ class Category(models.Model):
 
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    avatar = models.ImageField(upload_to='blog/avatar', default='/blog/avatar/default.png')
     title = models.CharField(max_length=200)
     content = models.TextField()
     image = models.ImageField(upload_to='blog/', default='/blog/default.jpg')
@@ -23,9 +35,13 @@ class Post(models.Model):
     updated_date = models.DateTimeField(auto_now=True)
     published_date = models.DateTimeField(null=True)
     category = models.ManyToManyField(Category)
+    tag = models.ManyToManyField(Tag)
 
     class Meta:
         ordering = ['-created_date']
 
     def __str__(self):
         return self.title
+
+    def avatar_image(self):
+        return format_html('<img src="{}" style="max-width:48px; max-height:48px"/>'.format(self.avatar.url))

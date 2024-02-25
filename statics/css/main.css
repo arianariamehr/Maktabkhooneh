@@ -2941,6 +2941,11 @@ body.mobile-nav-active #mobile-nav-toggle {
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  width: 100%;
+  max-width: 300px;
+  min-width: 300px;
+  max-height: 200px;
+  min-height: 200px;
 }
 
 .recent-blog-area .single-recent-blog-post .tags {
@@ -3656,6 +3661,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .widget-wrap .popular-post-widget .popular-post-list .thumb img {
   width: 100%;
+  max-width: 150px;
+  min-width: 150px;
+  max-height: 100px;
+  min-height: 100px;
 }
 
 .widget-wrap .popular-post-widget .single-post-list {
