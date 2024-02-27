@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b35d161-4a75-4580-9da0-7f0fd0048593" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/website/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/blog/Screenshot_2024-02-24_at_09.29.12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/blog-single.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/blog-single.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blog/blog-newsletter.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/blog-newsletter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/website/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/website/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
