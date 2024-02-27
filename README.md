@@ -2,4 +2,4 @@
 
 Produced By: `Reza Harasani`
 
-![website-snapshot.png](statics%2Fimg%2Fwebsite%2Fwebsite-snapshot.png)
+![website-snapshot.png](statics/img/website/website-snapshot.png)
