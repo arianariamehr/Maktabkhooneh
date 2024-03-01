@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.html import format_html
+from django.urls import reverse
 
 
 class Tag(models.Model):
@@ -45,3 +46,6 @@ class Post(models.Model):
 
     def avatar_image(self):
         return format_html('<img src="{}" style="max-width:48px; max-height:48px"/>'.format(self.avatar.url))
+
+    def get_absolute_url(self):
+        return reverse('blog:single', kwargs={'pid': self.id})
