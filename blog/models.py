@@ -2,16 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.html import format_html
 from django.urls import reverse
-
-
-class Tag(models.Model):
-    name = models.CharField(max_length=50)
-
-    class Meta:
-        verbose_name_plural = 'Tags'
-
-    def __str__(self):
-        return self.name
+from taggit.managers import TaggableManager
 
 
 class Category(models.Model):
@@ -36,7 +27,7 @@ class Post(models.Model):
     updated_date = models.DateTimeField(auto_now=True)
     published_date = models.DateTimeField(null=True)
     category = models.ManyToManyField(Category)
-    tag = models.ManyToManyField(Tag)
+    tags = TaggableManager()
 
     class Meta:
         ordering = ['-created_date']
