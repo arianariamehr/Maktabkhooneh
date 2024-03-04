@@ -33,7 +33,7 @@
                         <div class="contact-details">
                             <h5>Iran, Tehran</h5>
                             <p>
-                                4343 Hinkle Deegan Lake Road
+                                4343 Hinckley Keegan Lake Road
                             </p>
                         </div>
                     </div>
@@ -78,9 +78,12 @@
                                        type="text">
                             </div>
                             <div class="col-lg-6 form-group">
-                            <textarea class="common-textarea form-control" name="message" placeholder="Enter Messege"
-                                      onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Messege'"
+                            <textarea class="common-textarea form-control" name="message" placeholder="Enter Message"
+                                      onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"
                                       required=""></textarea>
+                            </div>
+                            <div class="col-lg-6 form-group">
+                                {{ form.captcha }}
                             </div>
                             <div class="col-lg-12">
                                 <div class="alert-msg" style="text-align: left;"></div>

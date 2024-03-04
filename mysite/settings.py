@@ -24,8 +24,6 @@ SECRET_KEY = 'django-insecure-v9uc0)%dq@9%l)c2tb^*)a5cv$14u)tgojy^gcsetymkanmj+v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -44,6 +42,8 @@ INSTALLED_APPS = [
     'robots',
     'debug_toolbar',
     'taggit',
+    'django_summernote',
+    'captcha',
     'website.apps.WebsiteConfig',
     'blog.apps.BlogConfig'
 ]
@@ -149,3 +149,46 @@ INTERNAL_IPS = [
 ]
 
 TAGGIT_CASE_INSENSITIVE = True
+
+# Summernote Config
+SUMMERNOTE_THEME = 'bs4'
+
+SUMMERNOTE_CONFIG = {
+    # Using SummernoteWidget - iframe mode, default
+    'iframe': True,
+
+    # You can put custom Summernote settings
+    'summernote': {
+        # As an example, using Summernote Air-mode
+        'airMode': False,
+
+        # Change editor size
+        'width': '300%',
+        'height': '480',
+
+        # Use proper language setting automatically (default)
+        'lang': None,
+
+        # Toolbar customization
+        'toolbar': [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['fontname', ['fontname']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']],
+        ],
+        # You can also add custom settings for external plugins
+        'print': {
+            'stylesheetUrl': '/some_static_folder/printable.css',
+        },
+        'codemirror': {
+            'mode': 'htmlmixed',
+            'lineNumbers': 'true',
+            # You have to include theme file in 'css' or 'css_for_inplace' before using it.
+            'theme': 'monokai',
+        }
+    },
+}
