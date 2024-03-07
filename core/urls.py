@@ -1,5 +1,5 @@
 """
-URL configuration for mysite project.
+URL configuration for core project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -35,7 +35,8 @@ urlpatterns = [
     path('robots.txt', include('robots.urls')),
     path("__debug__/", include('debug_toolbar.urls')),
     path('summernote/', include('django_summernote.urls')),
-    path('captcha/', include('captcha.urls'))
+    path('captcha/', include('captcha.urls')),
+    path('accounts/', include('accounts.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
