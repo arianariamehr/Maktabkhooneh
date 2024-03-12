@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django_summernote',
     'captcha',
     'website.apps.WebsiteConfig',
-    'blog.apps.BlogConfig'
+    'blog.apps.BlogConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
@@ -192,3 +193,5 @@ SUMMERNOTE_CONFIG = {
         }
     },
 }
+
+# LOGIN_REDIRECT_URL = '/'
