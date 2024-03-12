@@ -6,7 +6,7 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
     empty_value_display = "-empty-"
-    list_display = ["id", "avatar_image", "title", "status", "created_date", "updated_date",
+    list_display = ["id", "avatar_image", "title", "status", "login_require", "created_date", "updated_date",
                     "published_date"]
     list_filter = ["status", "author"]
     search_fields = ["title", "content"]

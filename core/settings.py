@@ -45,8 +45,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'captcha',
     'website.apps.WebsiteConfig',
-    'blog.apps.BlogConfig',
-    'accounts.apps.AccountsConfig'
+    'blog.apps.BlogConfig'
 ]
 
 X_FRAME_OPTIONS = "SAMEORIGIN"

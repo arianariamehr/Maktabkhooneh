@@ -124,7 +124,7 @@
                                     </div>
                                 </div>
                             </div>
-                        {% empty %}
+                            {% empty %}
                             <p>no comments here be the first one to tell you thoughts</p>
                         {% endfor %}
                     </div>
@@ -135,18 +135,23 @@
                             <div>
                                 <input type="hidden" name="post" value="{{ post.id }}">
                             </div>
-                            <div class="form-group form-inline">
-                                <div class="form-group col-lg-6 col-md-12 name">
-                                    <input type="text" class="form-control" name="name" placeholder="Enter Name"
-                                           onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Name'">
+                            {% if request.user.is_authenticated %}
+                                <div><input type="hidden" name="name" value="{{ request.user.username }}"></div>
+                                <div><input type="hidden" name="email" value="{{ request.user.email }}"></div>
+                            {% else %}
+                                <div class="form-group form-inline">
+                                    <div class="form-group col-lg-6 col-md-12 name">
+                                        <input type="text" class="form-control" name="name" placeholder="Enter Name"
+                                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Name'">
+                                    </div>
+                                    <div class="form-group col-lg-6 col-md-12 email">
+                                        <input type="email" class="form-control" name="email"
+                                               placeholder="Enter email address"
+                                               onfocus="this.placeholder = ''"
+                                               onblur="this.placeholder = 'Enter email address'">
+                                    </div>
                                 </div>
-                                <div class="form-group col-lg-6 col-md-12 email">
-                                    <input type="email" class="form-control" name="email"
-                                           placeholder="Enter email address"
-                                           onfocus="this.placeholder = ''"
-                                           onblur="this.placeholder = 'Enter email address'">
-                                </div>
-                            </div>
+                            {% endif %}
                             <div class="form-group">
                                 <input type="text" class="form-control" name="subject" placeholder="Subject"
                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Subject'">

@@ -1,9 +1,11 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from blog.models import Post, Comment
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from blog.forms import CommentForm
 from django.contrib import messages
+from django.urls import reverse
+from django.http import HttpResponseRedirect
 
 
 def blog_view(request, **kwargs):
@@ -43,9 +45,14 @@ def blog_single(request, pid):
     comments = Comment.objects.filter(post=post.id, approved=True)
     post.counted_views += 1
     post.save()
-    form = CommentForm()
-    content = {'post': post, 'comments': comments, 'form': form}
-    return render(request, 'blog/blog-single.html', content)
+
+    if not post.login_require:
+        form = CommentForm()
+        content = {'post': post, 'comments': comments, 'form': form}
+        return render(request, 'blog/blog-single.html', content)
+    else:
+        return HttpResponseRedirect(reverse('accounts:login'))
+
 
 
 def blog_search(request):
