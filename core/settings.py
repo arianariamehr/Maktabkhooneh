@@ -18,14 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-v9uc0)%dq@9%l)c2tb^*)a5cv$14u)tgojy^gcsetymkanmj+v'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
 # Application definition
-
 INSTALLED_APPS = [
     "admin_interface",
     "colorfield",
@@ -49,10 +42,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
 ]
 
-X_FRAME_OPTIONS = "SAMEORIGIN"
 SILENCED_SYSTEM_CHECKS = ["security.W019"]
-
-SITE_ID = 2
 
 ROBOTS_USE_HOST = True
 ROBOTS_USE_SITEMAP = True
@@ -88,16 +78,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -131,9 +111,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static'
-
 MEDIA_URL = 'media/'
+
+STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 STATICFILES_DIRS = [
@@ -193,5 +173,3 @@ SUMMERNOTE_CONFIG = {
         }
     },
 }
-
-# LOGIN_REDIRECT_URL = '/'
